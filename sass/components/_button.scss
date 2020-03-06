@@ -1,5 +1,5 @@
 .btn {
-
+    &, // as <button> dont have visited and link state
     &:link,
     &:visited {
       text-transform: uppercase;
@@ -10,6 +10,30 @@
       transition: all .2s;
       font-size: $default-font-size;
       position: relative;
+
+      // Change for the <button> element
+      border: none;
+      cursor: pointer;
+    }
+
+    
+
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /*X Y Blur color*/
+  
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0; /*Fading out*/
+      }
+    }
+  
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
     }
   
     &--white {
@@ -30,20 +54,7 @@
       }
     }
   
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /*X Y Blur color*/
-  
-      &::after {
-        transform: scaleX(1.4) scaleY(1.6);
-        opacity: 0; /*Fading out*/
-      }
-    }
-  
-    &:active {
-      transform: translateY(-1px);
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-    }
+    
   
     &::after {
       content: "";

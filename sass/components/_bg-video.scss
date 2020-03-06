@@ -12,6 +12,6 @@
         height: 100%;
         width: 100%;
         // it will fill the parent while maintaining videos aspect ratio
-        object-fit: fill; // similar to bg-size: cover;
+        object-fit: cover; // similar to bg-size: cover;
     }
 }
